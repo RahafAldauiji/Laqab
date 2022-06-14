@@ -1,0 +1,78 @@
+﻿<%- include('../partials/header')-%> <%- include('../partials/navbar')-%>
+<div class="container">
+  <div class="row mt-4">
+    <%-include('../partials/flashMessage') -%>
+    <div class="col-md-9 offset-md-1">
+      <form action="/users/update" method="post">
+        <div class="card text-end">
+          <div class="card-body">
+            <h4 class="card-title"><%=car.type %></h4>
+            <input
+              type="text"
+              name="id"
+              id="id"
+              class="card-title"
+              value="<%= car._id%>"
+              hidden
+            />
+            <input
+              type="text"
+              name="type"
+              id="type"
+              class="card-title"
+              value="<%= car.type%>"
+              hidden
+            />
+            <hr />
+            <h5 class="card-text"><%=car.description%></h5>
+            <h5><%=car.location%></h5>
+            <input
+              type="text"
+              name="description"
+              id="description"
+              class="card-title"
+              value="<%= car.description%>"
+              hidden
+            /><input
+              type="text"
+              name="location"
+              id="location"
+              class="card-title"
+              value="<%= car.location%>"
+              hidden
+            />
+            <h5>
+              <span class="badge bg-light text-dark">
+                ريال <%= car.price%>
+              </span>
+            </h5>
+            <input
+              type="text"
+              name="price"
+              id="price"
+              class="card-title"
+              value="<%= car.price%>"
+              hidden
+            />
+
+            <% if (user) { %> <% if ((car.user_id==null)) { %>
+            <input
+              type="text"
+              name="userId"
+              id="userId"
+              class="card-title"
+              value="<%= user.id%>"
+              hidden
+            />
+            <button type="submit" class="btn btn-success btn-lg">شراء</button>
+
+            <% } else { %>
+            <p>تم بيع السيارة</p>
+            <%} %> <%} %>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<%- include('../partials/footer')-%>

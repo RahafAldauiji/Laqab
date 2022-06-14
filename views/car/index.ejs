@@ -1,0 +1,32 @@
+<%- include('../partials/header')-%> <%- include('../partials/navbar')-%>
+
+<div class="container">
+  <% chunk.forEach((cars)=> {%>
+  <div class="row mt-3 ms">
+    <% cars.forEach((car)=> {%>
+
+          <div class="col-sm-6 col-md-4">
+            <div class="card text-end">
+              <div class="card-body">
+                <h5 class="card-title"><%= car.type%></h5>
+                <p><%= car.location%></p>
+                <p>
+                  <span class="badge bg-light text-dark"> ريال <%= car.price%> </span>
+                </p>
+                <a
+                  href="<%=  '/cars/show/'  + car.id %>"
+                  class="btn btn-success"
+                  >المزيد</a
+                >
+              </div>
+            </div>
+          </div>
+          <%})%>
+        </div>
+        <%})%>
+      </div>
+    </div>
+    
+  </div>
+</div>
+<%- include('../partials/footer')-%>
