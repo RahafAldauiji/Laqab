@@ -22,6 +22,7 @@ router.post("/create", (req, res) => {
     description: req.body.description,
     price: req.body.price,
     location: req.body.location,
+    img_URL: req.body.img_URL,
     created_at: Date.now(),
   });
 
