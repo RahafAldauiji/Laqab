@@ -20,7 +20,9 @@
                       <h5 class="card-title"><%= car.type%></h5>
                       <p class="card-text"><%=car.description%></p>
                       <p><%= car.location%></p>
-                      
+                      <p class="d-inline d-flex flex-row">
+                        <img swidth="150" height="150" src = "<%= car.img_URL%>" />
+                      </p>
                       <p>
                         <span class="badge bg-light text-dark"> ريال <%= car.price%> </span>
                       </p>

@@ -23,6 +23,7 @@ router.post("/create", (req, res) => {
     price: req.body.price,
     location: req.body.location,
     img_URL: req.body.img_URL,
+    video_URL: req.body.video_URL,
     created_at: Date.now(),
   });
 
@@ -66,6 +67,22 @@ router.get("/buy", (req, res) => {
       chunk: chunk,
     });
   });
+});
+
+// delete car
+router.post("/delete", (req, res) => {
+  console.log("in");
+  let deleteQuery = { _id: req.body.id };
+  car
+    .deleteOne(deleteQuery)
+    .then(function () {
+      console.log("Data deleted"); // Success
+    })
+    .catch(function (error) {
+      console.log(error); // Failure
+    });
+
+  res.redirect("buy");
 });
 
 module.exports = router;

@@ -4,7 +4,7 @@
   <% chunk.forEach((cars)=> {%>
   <div class="row mt-3 ms">
     <% cars.forEach((car)=> {%>
-
+      
           <div class="col-sm-6 col-md-4">
             <div class="card text-end">
               <div class="card-body">
@@ -14,10 +14,21 @@
                 <p>
                   <span class="badge bg-light text-dark"> ريال <%= car.price%> </span>
                 </p>
-                
+                <form action="/admin/delete" method="post">
+                <input
+              type="text"
+              name="id"
+              id="id"
+              class="card-title"
+              value="<%= car._id%>"
+              hidden
+            />
+        <button type="submit" class="btn btn-success btn-lg">حذف</button>
+
               </div>
             </div>
           </div>
+        </form>
           <%})%>
         </div>
         <%})%>

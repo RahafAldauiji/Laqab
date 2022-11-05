@@ -26,6 +26,23 @@
             <hr />
             <h5 class="card-text"><%=car.description%></h5>
             <h5><%=car.location%></h5>
+            <div>
+              <p class="d-inline d-flex flex-row">
+                <img swidth="150" height="150" src="<%= car.img_URL%>" />
+              </p>
+            </div>
+            <div>
+              <iframe
+                class="embed-resposive-item"
+                width="700"
+                height="500"
+                src="<%= car.video_URL%>"
+                class="w-100"
+                alt="..."
+                frameborder="0"
+                allowfullscreen
+              ></iframe>
+            </div>
             <input
               type="text"
               name="description"
@@ -39,6 +56,22 @@
               id="location"
               class="card-title"
               value="<%= car.location%>"
+              hidden
+            />
+            <input
+              type="text"
+              name="video_URL"
+              id="video_URL"
+              class="card-title"
+              value="<%= car.video_URL%>"
+              hidden
+            />
+            <input
+              type="text"
+              name="img_URL"
+              id="img_URL"
+              class="card-title"
+              value="<%= car.img_URL%>"
               hidden
             />
             <h5>
